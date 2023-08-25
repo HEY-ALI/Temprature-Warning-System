@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "author": "Arbab Ali",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 6.4, "left": 38.42, "attrs": {} },
+    {
+      "type": "wokwi-ntc-temperature-sensor",
+      "id": "ntc1",
+      "top": -123.57,
+      "left": -43.54,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 47.7,
+      "left": -102.72,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -190.16,
+      "left": 239.44,
+      "attrs": { "color": "limegreen" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -74.88,
+      "left": -121.92,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 139.88,
+      "left": -88.22,
+      "attrs": { "value": "300" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": -123.59,
+      "left": 188.07,
+      "attrs": { "value": "300" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": -17.46,
+      "left": -107.86,
+      "attrs": { "value": "300" }
+    }
+  ],
+  "connections": [
+    [ "ntc1:GND", "uno:GND.1", "black", [ "h60.83", "v111.11" ] ],
+    [ "ntc1:VCC", "uno:VIN", "red", [ "h238.31", "v354", "h-96.97", "v-22.87" ] ],
+    [ "ntc1:OUT", "uno:A0", "green", [ "h252.03", "v323.26", "h-92.4" ] ],
+    [ "led3:A", "uno:4", "green", [ "v-9.19", "h174.19", "v-1.83", "h174.74" ] ],
+    [ "led3:C", "r3:1", "green", [ "v22.83", "h-1.52" ] ],
+    [ "r3:2", "uno:GND.1", "green", [ "v25.55", "h202.26" ] ],
+    [ "led1:A", "uno:3", "green", [ "v3.63", "h358.09" ] ],
+    [ "led1:C", "r1:1", "green", [ "v53.03", "h2.15" ] ],
+    [ "r1:2", "uno:GND.2", "green", [ "v75.88", "h2.4" ] ],
+    [ "led2:A", "uno:2", "green", [ "v160.98", "h9.52" ] ],
+    [ "led2:C", "r2:1", "green", [ "v-0.03", "h-89.34" ] ],
+    [ "r2:2", "uno:GND.3", "green", [ "v-2.81", "h130.47", "v402.53", "h-159.18" ] ]
+  ],
+  "dependencies": {}
+}
